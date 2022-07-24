@@ -15,7 +15,8 @@ const emailForm =  document.querySelector("#emailForm");
 
 const toast = document.querySelector(".toast");
 
-const host = "http://localhost:5000/";
+// const host = "http://localhost:5000/";
+const host = "https://shareitbypratik.herokuapp.com/";
 const uploadURL = `${host}api/files`;
 const emailURL = `${host}api/files/send`;
 
