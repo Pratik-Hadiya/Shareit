@@ -2,38 +2,36 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <link rel="shortcut icon" href="/img/favicon.ico" type="image/x-icon">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Download | Shareit - Share file anywhere</title>
-    <link rel="stylesheet" href="/css/style.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Download | Shareit - Share your files with ease</title>
+
+  <link rel="apple-touch-icon" href="/apple-icon.png">
+  <link rel="icon" type="image/png" href="/favicon.png">
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico">
+
+  <link rel="stylesheet" href="/css/style.min.css">
 </head>
 
 <body>
-    <img src="/img/logo.png" alt="Shareit logo" class="logo">
-
-    <section class="download">
-        <img class="download__icon" src="/img/dwn.svg" alt="inshare-download">
-        <% if(locals.error){ %>
-        <h4><%= locals.error %> 😏</h4>
-        <% } else { %>
-        <h2>Your file is ready to download</h2>
-        <p>Link expires Tommorow at 2 A.M.</p>
-        <div class="download__meta">
-            <h4><%= fileName %></h4>
-            <small><%= parseInt(fileSize/1000) %> KB</small>
-        </div>
-        <div class="send-btn-container">
-            <a href="<%= downloadLink %>">Download file</a>
-        </div>
-        <div class="made-by">
-            <p>Made with ❤️ By <a href="https://www.linkedin.com/in/pratik-hadiya">Pratik Hadiya</a></p>
-        </div>
-        <% } %>
-
-
-    </section>
-
+  <section class="download-container">
+    <% if(locals.error) {%>
+    <div class="wrapper error">
+      <h4><%= locals.error %> </h4>
+      <p>Requested file link may have been modifed or expired. <br>Ask sender to share the file again.</p>
+    </div>
+    <% } else {%>
+    <div class="wrapper success">
+      <!-- <div class="icon"></div> -->
+      <h4>Ready for download!</h4>
+      <p>Download link will expire in 24 hours after it's shared for the first time.</p>
+      <a class="btn" href="<%= downloadLink %>">Download (<%= parseInt(size/1000) %> KB) </a>
+      <% }%>
+    </div>
+  </section>
+  <section class="developer-info">
+    <div class="developer">Made with ❤️ By <a href="https://www.linkedin.com/in/pratik-hadiya/">Pratik Hadiya</a></div>
+  </section>
 </body>
 
 </html>
