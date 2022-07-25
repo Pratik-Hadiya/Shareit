@@ -536,5 +536,9 @@
     background: var(--bg-color);
     padding-bottom: 50px;
     color: #eee;
+    font-weight: 500;
   }
-
+  .developer-info a{
+    font-size: 18px;
+    color: var(--app-color-hover);
+  }
