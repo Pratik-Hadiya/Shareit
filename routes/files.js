@@ -103,7 +103,7 @@ router.post('/sendmail', async (req, res) => {
         success: true
       });
     }).catch(err => {
-      consolelog(err)
+      console.log(err);
       return res.status(500).json({
         error: 'Error in email sending.'
       });
